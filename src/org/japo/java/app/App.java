@@ -65,12 +65,10 @@ public final class App {
             } finally {
                 SCN.nextLine();
             }
-            
 
         } while (errorOk);
         System.out.println("---");
         System.out.println(MSG_OUT + (int) numero);
         return numero;
-
     }
 }
