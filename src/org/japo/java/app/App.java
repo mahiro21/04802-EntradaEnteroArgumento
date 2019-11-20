@@ -33,7 +33,7 @@ public final class App {
     public static final String MSG_OUT = "Número introducido ...: ";
     public static final String MSG_ERR = "ERROR: Entrada incorrecta";
 
-    public final void launchApp() {
+    public static final void launchApp() {
         //Cabecera
         System.out.println("INTRODUCCIÓN ENTERO");
         System.out.println("===================");
@@ -42,8 +42,6 @@ public final class App {
         int n = (int) obtener(MSG_USR, MSG_OUT);
 
         //Mostrar dato
-        System.out.printf(MSG_OUT, "%d%n", n);
-
     }
 
     public static final double obtener(String msgUsr, String msgErr) {
@@ -57,19 +55,22 @@ public final class App {
                 System.out.print(msgUsr);
                 numero = SCN.nextDouble();
                 errorOk = false;
-                
+
             } catch (Exception e) {
                 //Mensaje error
-                System.out.print(MSG_ERR);
+                System.out.println(MSG_ERR);
 
                 //Separador
                 System.out.println("---");
+            } finally {
+                SCN.nextLine();
             }
-            finally{
-            SCN.nextLine();
-            }
-        } while (errorOk);
-        return numero;
-    }
+            
 
+        } while (errorOk);
+        System.out.println("---");
+        System.out.println(MSG_OUT + (int) numero);
+        return numero;
+
+    }
 }
