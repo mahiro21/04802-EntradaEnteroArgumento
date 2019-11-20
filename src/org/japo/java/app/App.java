@@ -15,7 +15,7 @@
  */
 package org.japo.java.app;
 
-//import org.japo.java.main.Main;
+
 import java.util.Locale;
 import java.util.Scanner;
 
@@ -39,7 +39,7 @@ public final class App {
         System.out.println("===================");
 
         //Dato consola
-        int n = (int) obtener(MSG_USR, MSG_OUT);
+        obtener(MSG_USR, MSG_OUT);
 
         //Mostrar dato
     }
