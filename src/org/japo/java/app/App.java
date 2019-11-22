@@ -15,9 +15,7 @@
  */
 package org.japo.java.app;
 
-
-import java.util.Locale;
-import java.util.Scanner;
+import org.japo.java.libraries.UtilesEntrada;
 
 /**
  *
@@ -25,50 +23,22 @@ import java.util.Scanner;
  */
 public final class App {
 
-    public static final Scanner SCN
-            = new Scanner(System.in, "Windows-1252")
-                    .useLocale(Locale.ENGLISH).useDelimiter("\\s+");
-
-    public static final String MSG_USR = "Introduce un número ..:";
-    public static final String MSG_OUT = "Número introducido ...: ";
-    public static final String MSG_ERR = "ERROR: Entrada incorrecta";
-
+//    public static final String MSG_USR = "Introduce un número ..:";
+//    public static final String MSG_OUT = "Número introducido ...: ";
+//    public static final String MSG_ERR = "ERROR: Entrada incorrecta";
     public static final void launchApp() {
+        String usr = "";
+        String out = "";
+        
+
         //Cabecera
         System.out.println("INTRODUCCIÓN ENTERO");
         System.out.println("===================");
 
         //Dato consola
-        obtener(MSG_USR, MSG_OUT);
+        System.out.println(UtilesEntrada.obtener(usr, out));
 
         //Mostrar dato
     }
 
-    public static final double obtener(String msgUsr, String msgErr) {
-        //Numero devolver
-        double numero = 0;
-
-        //Proceso entrada
-        boolean errorOk = true;
-        do {
-            try {
-                System.out.print(msgUsr);
-                numero = SCN.nextDouble();
-                errorOk = false;
-
-            } catch (Exception e) {
-                //Mensaje error
-                System.out.println(MSG_ERR);
-
-                //Separador
-                System.out.println("---");
-            } finally {
-                SCN.nextLine();
-            }
-
-        } while (errorOk);
-        System.out.println("---");
-        System.out.println(MSG_OUT + (int) numero);
-        return numero;
-    }
 }
